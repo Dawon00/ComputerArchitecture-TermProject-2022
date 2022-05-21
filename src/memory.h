@@ -1,29 +1,20 @@
-#define MEMORY_SIZE 0x100000
+unsigned int MEM(unsigned int A, int V, int nRW, int S);
+// access memory(read & write)
+// pM : memory access pointer
+// sel : 메모리에 접근하기 위해 입력받은 주소 값 A의 상위 12bit 저장
+// sel 에 따라 program memory/data memory/stack memory 구분
+// word size 별로 선택
+// nRW 에 따라 read memory / write memory
 
-enum SIZE
-{
-  BYTE,
-  HALF_WORD,
-  WORD
-};
-
-enum READ_WRITE
-{
-  READ,
-  WRITE
-};
-
-// 메모리 접근 인터페이스
-int MEM(unsigned int A, int V, int nRW, int S);
-
-// start 주소부터 end 주소까지의 메모리 출력하기
-// m <start> <end> 명령어 입력 시 실행됨
-// ex) m 0x400000 0x400010
-void viewMemory(unsigned int start, unsigned int end);
-
-// 프로그램, 데이터, 스택 메모리 값 모두 0으로 reset
-void resetMemory();
-
-// 메모리의 주소를 value 값으로 설정
-// sm 명령어 입력 시 실행됨
 void setMemory(unsigned int address, int value);
+// 'sm' instruction -> memory address를 value 값으로
+
+void printMemory(unsigned int start, unsigned int end);
+// 'm <start> <end>' -> print memory
+// start address ~ end address print memory
+
+void resetMemory();
+// program memory, data memory, stack memory 값 모두 0으로 reset
+
+
+
