@@ -9,7 +9,7 @@ unsigned int MEM(unsigned int A, int V, int nRW, int S);
 void setMemory(unsigned int address, int value);
 // 'sm' instruction -> memory address를 value 값으로
 
-void printMemory(unsigned int start, unsigned int end);
+void showMemory(unsigned int start, unsigned int end);
 // 'm <start> <end>' -> print memory
 // start address ~ end address print memory
 
