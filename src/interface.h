@@ -13,5 +13,5 @@ int stepProgram();
 // 프로그램 전체 실행. g 명령어 입력 시 실행됨
 void goProgram();
 
-//
+//breakpoint 설정
 void setbreak();
