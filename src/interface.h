@@ -17,4 +17,7 @@ int stepProgram();
 void goProgram();
 
 //breakpoint 설정
-void setbreak();
+void setBreak();
+
+// 명령어 help 리스트 출력
+void helpCommand();
