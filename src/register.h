@@ -1,5 +1,9 @@
 #define REG_SIZE 32
 
+// Memory Register
+unsigned int MEM_REGS[REG_SIZE];
+// PC, HI, LO
+unsigned int PC, HI, LO;
 // Instruction Register
 union IR
 {
