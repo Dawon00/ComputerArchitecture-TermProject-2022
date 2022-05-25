@@ -67,6 +67,48 @@ int parseCommand(char *command, char **argv)
   return argc;
 }
 
+void loadProgram(char fileName[100])
+{
+	int num_inst = 0; //number of instructions
+	int num_data = 0; //number of data
+	FILE *pFile = NULL;
+	errno_t err;
+	unsigned char M[100]; //for store instruction
+	DM = 0x10000000;	  //Entry of data memory
+	setPC(0x400000);
+	//open file
+	err = fopen_s(&pFile, fileName, "rb");
+	if (err)
+	{
+		printf("Cannot open file\n");
+		return;
+	}
+	//get number of instruction & data
+	fread(&num_inst, sizeof(int), 1, pFile);
+	fread(&num_data, sizeof(int), 1, pFile);
+	num_inst = num_inst >> 24; //because of Big-endian
+	num_data = num_data >> 24;
+	printf("Number of Instructions: %d, Number of Data: %d\n", num_inst, num_data);
+
+	//load on memory(1 byte at a time)
+	for (int i = 0; i < (num_inst * 4); i++)
+	{
+		unsigned int access_prog = PC + i;
+		fread(&M[i], sizeof(M[0]), 1, pFile);
+		MEM(access_prog, M[i], 1, 0);
+	}
+	for (int i = 0; i < (num_data * 4); i++)
+	{
+		unsigned int access_data = DM + i;
+		fread(&M[i], sizeof(M[0]), 1, pFile);
+		MEM(access_data, M[i], 1, 0);
+	}
+	//initialize PC, StackPointer
+	setPC(0x400000);
+	REG(29, 0x80000000, 1);
+	fclose(pFile);
+}
+
 void helpCommand()
 {
   printf("usage: <command> <option>\n");
