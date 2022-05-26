@@ -1,11 +1,12 @@
-unsigned char progMEM[0x100000];
-unsigned char dataMEM[0x100000];
-unsigned char stackMEM[0x100000];
+#define MEMORY_SIZE 0x100000;
+unsigned char progMEM[MEMORY_SIZE];
+unsigned char dataMEM[MEMORY_SIZE];
+unsigned char stackMEM[MEMORY_SIZE];
 
 // access memory(read & write)
 unsigned int MEM(unsigned int A, int V, int nRW, int S){
 	
-  unsigned int sel, offset;
+	unsigned int sel, offset;
   unsigned char* pM;// pM : memory access pointer
   sel = A >> 20; // sel : 메모리에 접근하기 위해 입력받은 주소 값 A의 상위 12bit 저장
   offset = A >> 20;
@@ -62,11 +63,7 @@ unsigned int MEM(unsigned int A, int V, int nRW, int S){
 
 // 'sm' instruction -> memory address를 value 값으로
 void setMemory(unsigned int address, int value){
-  	printf("Enter memory address and value(address value): ");
-		scanf_s("%x %x", &where, &value);
-		while (getchar() != '\n')
-			;
-		MEM(where, value, 1, 2);
+	MEM(address, value, 1, 2);
 }
 
 // program memory, data memory, stack memory 값 모두 0으로 reset
