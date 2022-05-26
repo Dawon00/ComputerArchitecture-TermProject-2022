@@ -1,5 +1,3 @@
-#include <stdio.h>
-
 // str -> unsigned int 변환
 unsigned int parseInt(char *str);
 

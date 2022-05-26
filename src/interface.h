@@ -6,7 +6,10 @@ int parseCommand(char *command, char **argv);
 
 // 프로그램 불러오기. l 명령어 입력 시 실행됨
 // 하는 일: 1. 파일을 읽기, 2. PC, 레지스터, 메모리 초기화 3. 파일 내용을 메모리에 적재
-void loadProgram(const char *filename);
+void loadProgram(char *filename);
+
+// 'j' instruction -> jump
+void jumpProgram(unsigned int address);
 
 // 명령어 한 단계 씩 실행. s 명령어 입력 시 실행됨
 int stepProgram();

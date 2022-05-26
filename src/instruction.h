@@ -1,7 +1,6 @@
 // 메모리에서 PC가 가리키는 명령어 가져오기
 union IR instructionFetch();
 
-
 // R 포맷 명령어
 int sll(int rd, int rt, int sh);
 int srl(int rd, int rt, int sh);

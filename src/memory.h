@@ -1,3 +1,5 @@
+unsigned int DM;
+
 unsigned int MEM(unsigned int A, int V, int nRW, int S);
 // access memory(read & write)
 // pM : memory access pointer
@@ -15,6 +17,3 @@ void showMemory(unsigned int start, unsigned int end);
 
 void resetMemory();
 // program memory, data memory, stack memory 값 모두 0으로 reset
-
-
-
