@@ -63,7 +63,7 @@ unsigned int MEM(unsigned int A, int V, int nRW, int S){
 
 // 'sm' instruction -> memory address를 value 값으로
 void setMemory(unsigned int address, int value){
-	MEM(address, value, 1, 2);
+	MEM(address, value, 1, 2); // 1 : write, 2 : word
 }
 
 // program memory, data memory, stack memory 값 모두 0으로 reset
