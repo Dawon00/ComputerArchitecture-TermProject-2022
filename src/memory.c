@@ -1,5 +1,10 @@
+unsigned char progMEM[0x100000];
+unsigned char dataMEM[0x100000];
+unsigned char stackMEM[0x100000];
+
 // access memory(read & write)
 unsigned int MEM(unsigned int A, int V, int nRW, int S){
+	
   unsigned int sel, offset;
   unsigned char* pM;// pM : memory access pointer
   sel = A >> 20; // sel : 메모리에 접근하기 위해 입력받은 주소 값 A의 상위 12bit 저장
