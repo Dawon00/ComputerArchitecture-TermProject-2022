@@ -35,6 +35,4 @@ typedef union IR
 // 메모리에서 PC가 가리키는 명령어 가져오기
 union IR instructionFetch(); //필요없으면 빼겠음.
 
-void goProgram();
-
 void step();

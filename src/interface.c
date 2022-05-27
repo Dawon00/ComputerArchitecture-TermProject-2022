@@ -120,6 +120,21 @@ void jumpProgram(unsigned int address)
   jumpRegister(address);
 }
 
+  // instruction에 구현되어 있는 step 함수를 사용하였음
+int stepProgram()
+{
+  step;
+  return 1; // 프로그램 끝났으면 1 반환, 아니면 0 반환
+}
+
+  // 프로그램 전체 실행. g 명령어 입력 시 실행됨
+void goProgram() {
+  while (1) {
+    int end = stepProgram();
+    if (end) return;
+  }
+}
+
 
 void helpCommand()
 {

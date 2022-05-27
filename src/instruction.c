@@ -4,16 +4,6 @@
 extern int PC, HI, LO;
 
 
-void goProgram()
-{
-  if (PC == 0 || PC == breakPC)
-    step();
-  while (PC != 0 && PC != breakPC)
-  {
-    step();
-  }
-}
-
 void step()
 {
   Instruction IR = {
