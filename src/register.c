@@ -42,3 +42,8 @@ void setRegister()
 		;
 	REG(where, value, 1);
 }
+
+void jumpRegister(unsigned int address)
+{
+	PC = address;
+}

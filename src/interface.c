@@ -77,13 +77,12 @@ void loadProgram(char *fileName)
   int num_inst = 0; //number of instructions
   int num_data = 0; //number of data
   FILE *pFile = NULL;
-  errno_t err;
   unsigned char M[100]; // for store instruction
   DM = 0x10000000;      // Entry of data memory
   PC = 0x400000;
   //open file
-  err = fopen(&pFile, fileName, "rb");
-  if (err)
+  pFile = fopen(fileName, "rb");
+  if (pFile == NULL)
   {
     printf("Cannot open file\n");
     return;
@@ -113,6 +112,14 @@ void loadProgram(char *fileName)
   REG(29, 0x80000000, 1);
   fclose(pFile);
 }
+
+// 프로그램 점프하기. j 명령어 입력 시 실행됨
+void jumpProgram(unsigned int address)
+{
+  // PC를 address로 설정
+  jumpRegister(address);
+}
+
 
 void helpCommand()
 {
