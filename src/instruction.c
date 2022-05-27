@@ -1,4 +1,5 @@
 #include "instruction.h"
+#include "operator.h"
 
 extern int PC, HI, LO;
 
