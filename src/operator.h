@@ -1,4 +1,15 @@
-unsigned int ALU(int X, int Y, int S, int *Z);
+#define sll 0
+#define srl 2
+#define sra 3
+#define add 32
+#define sub 34
+#define and 36
+#define or 37
+#define xor 38
+#define nor 39
+#define slt 42
+
+unsigned int ALU(int fct, int v1, int v2); //ALU
 // sll/srl/sra -> shiftOperation
 // add/sub -> addSubtract
 // and/or/xor/nor -> logicOperation
