@@ -8,10 +8,10 @@ unsigned int MEM(unsigned int A, int V, int nRW, int S);
 // word size 별로 선택
 // nRW 에 따라 read memory / write memory
 
-void setMemory(unsigned int address, int value);
+void setMemory();
 // 'sm' instruction -> memory address를 value 값으로
 
-void showMemory(unsigned int start, unsigned int end);
+void showMemory();
 // 'm <start> <end>' -> print memory
 // start address ~ end address print memory
 
