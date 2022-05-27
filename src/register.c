@@ -9,9 +9,9 @@ unsigned int REG(unsigned int A, unsigned int V, unsigned int nRW)
 		exit(1);
 	}
 	if (nRW == 0) //read
-		return REGISTER[A];
+		return REGS[A];
 	else if (nRW == 1) //write
-		REGISTER[A] = V;
+		REGS[A] = V;
 	return 0;
 }
 
@@ -21,7 +21,7 @@ void showRegister()
 	printf("==========[REGISTER]==========\n");
 	for (int i = 0; i < REG_SIZE; i++)
 	{
-		printf("R%-2d = %x\n", i, REGISTER[i]);
+		printf("R%-2d = %x\n", i, REGS[i]);
 	}
 	printf("PC = 0x%08x\n", PC);
 	printf("HI = %x	 LO = %x\n", HI, LO);
@@ -29,11 +29,13 @@ void showRegister()
 }
 
 // register 값 모두 0으로 reset
-void resetRegister();
+void resetRegister(); //필요 없으면 빼겠음.
 
 // 'sr' instruction -> register 값 설정
-void setRegister(unsigned int number, int value)
+void setRegister()
 {
+	unsigned int where;
+	unsigned int value;
 	printf("Enter register number and value(number value): ");
 	scanf_s("%d %x", &where, &value);
 	while (getchar() != '\n')

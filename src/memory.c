@@ -1,9 +1,8 @@
 #include "memory.h"
 
-#define MEMORY_SIZE 0x100000;
-unsigned char progMEM[MEMORY_SIZE];
-unsigned char dataMEM[MEMORY_SIZE];
-unsigned char stackMEM[MEMORY_SIZE];
+unsigned char progMEM[0x100000];
+unsigned char dataMEM[0x100000];
+unsigned char stackMEM[0x100000];
 
 // access memory(read & write)
 unsigned int MEM(unsigned int A, int V, int nRW, int S)
@@ -76,13 +75,19 @@ unsigned int MEM(unsigned int A, int V, int nRW, int S)
 }
 
 // 'sm' instruction -> memory address를 value 값으로
-void setMemory(unsigned int address, int value)
+void setMemory()
 {
-	MEM(address, value, 1, 2);
+	unsigned int where;
+	unsigned int value;
+	printf("Enter memory address and value(address value): ");
+	scanf_s("%x %x", &where, &value);
+	while (getchar() != '\n')
+		;
+	MEM(where, value, 1, 2);
 }
 
 // program memory, data memory, stack memory 값 모두 0으로 reset
-void resetMemory();
+void resetMemory(); //필요없으면 빼겠음.
 
 // 'm <start> <end>' -> print memory
 // start address ~ end address print memory

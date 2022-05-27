@@ -30,10 +30,10 @@ int main(void)
       // 입력 주소로 프로그램 PC 점프
       break;
     case 'g':
-      // goProgram();
+      // instruction.c 에 있는 goProgram() 사용해주세요.
       break;
     case 's':
-      // stepProgram();
+      // instruction.c 에 있는 step() 사용해주세요.
       break;
     case 'm':
       // 입력 주소의 메모리값 출력

@@ -1,8 +1,9 @@
+#include "operator.h"
 // sll/srl/sra -> shiftOperation
 // add/sub -> addSubtract
 // and/or/xor/nor -> logicOperation
 // slt -> checkSetLess
-unsigned int ALU(int fct, int v1, int v2)j {
+unsigned int ALU(int fct, int v1, int v2) {
 	unsigned int ret = 0;
 	switch (fct) {
 	case sll: case srl: case sra:
