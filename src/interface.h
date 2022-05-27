@@ -18,7 +18,7 @@ int stepProgram(); // instruction.c 에 있는 step() 임
 void goProgram(); // instruction.c 에 있는 goProgram() 임
 
 //breakpoint 설정
-void setBreak();
+void setBreak(unsigned int addressPC);
 
 // 명령어 help 리스트 출력
 void helpCommand();

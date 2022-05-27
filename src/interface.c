@@ -37,7 +37,11 @@ int main(void)
       break;
     case 'm':
       // 입력 주소의 메모리값 출력
+      // showMemory(unsigned char address);
       break;
+    case 'r':
+      // 전체 레지스터값 출력
+      // showRegister()
     case 'h':
       helpCommand();
       break;
@@ -123,18 +127,26 @@ void jumpProgram(unsigned int address)
   // instruction에 구현되어 있는 step 함수를 사용하였음
 int stepProgram()
 {
-  step;
+  step()
   return 1; // 프로그램 끝났으면 1 반환, 아니면 0 반환
 }
 
   // 프로그램 전체 실행. g 명령어 입력 시 실행됨
 void goProgram() {
-  while (1) {
-    int end = stepProgram();
-    if (end) return;
-  }
+  if (PC == 0 || PC == breakPC)
+	  end = stepProgram();
+	while (PC != 0 && PC != breakPC)
+	{
+	  end = stepProgram();
+	}
+  if (end) return;
 }
 
+  // breakpoint 설정. b 명령어 입력 시 실행됨
+void setBreak(unsigned int addressPC)
+{
+	breakPC = addressPC;
+}
 
 void helpCommand()
 {

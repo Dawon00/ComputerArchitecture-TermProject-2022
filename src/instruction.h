@@ -5,6 +5,7 @@ unsigned int LO;
 unsigned int PC;      //PC register
 unsigned int breakPC; //break point
 unsigned int DM;      //Entry of data memory
+int end; //goProgram
 
 typedef union IR
 { //union for instruction decoding

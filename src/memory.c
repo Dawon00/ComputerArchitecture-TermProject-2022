@@ -89,20 +89,11 @@ void setMemory()
 
 // 'm <start> <end>' -> print memory
 // start address ~ end address print memory
-void showMemory()
+void showMemory(unsigned char address)
 {
-	unsigned int start = 0;
-	unsigned int end = 0;
-	printf("Enter centain range of memory to show(start end): ");
-	scanf_s("%x %x", &start, &end);
-	while (getchar() != '\n')
-		; //flush input buffer
 	printf("==========[MEMORY]==========\n");
 	//show memory value from start to end(1 byte at a time)
-	for (unsigned int i = start; i <= end; i += 4)
-	{
-		printf("MEM[0x%0x] -> %x\n", i, MEM(i, 0, 0, 2));
-	}
+	printf("MEM[0x%0x] -> %x\n", address, MEM(address, 0, 0, 2));
 	printf("============================\n");
 }
 

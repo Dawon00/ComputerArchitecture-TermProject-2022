@@ -11,7 +11,7 @@ unsigned int MEM(unsigned int A, int V, int nRW, int S);
 void setMemory();
 // 'sm' instruction -> memory address를 value 값으로
 
-void showMemory();
+void showMemory(unsigned char address);
 // 'm <start> <end>' -> print memory
 // start address ~ end address print memory
 
