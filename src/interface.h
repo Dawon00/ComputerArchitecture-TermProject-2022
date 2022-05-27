@@ -12,10 +12,10 @@ void loadProgram(char *filename);
 void jumpProgram(unsigned int address);
 
 // 명령어 한 단계 씩 실행. s 명령어 입력 시 실행됨
-int stepProgram();
+int stepProgram(); // instruction.c 에 있는 step() 임
 
 // 프로그램 전체 실행. g 명령어 입력 시 실행됨
-void goProgram();
+void goProgram(); // instruction.c 에 있는 goProgram() 임
 
 //breakpoint 설정
 void setBreak();
