@@ -127,7 +127,7 @@ void jumpProgram(unsigned int address)
   // instruction에 구현되어 있는 step 함수를 사용하였음
 int stepProgram()
 {
-  step()
+  step();
   return 1; // 프로그램 끝났으면 1 반환, 아니면 0 반환
 }
 
