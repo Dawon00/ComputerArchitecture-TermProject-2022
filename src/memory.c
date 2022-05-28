@@ -74,8 +74,8 @@ unsigned int MEM(unsigned int A, int V, int nRW, int S)
 	return 0;
 }
 
-// m instruction -> 실행
-// '<start> <end>' 입력-> print memory
+// 'm' instruction 입력하면 실행
+// '<start> <end>' 입력하면 print memory
 // start address ~ end address print memory
 void showMemory()
 {

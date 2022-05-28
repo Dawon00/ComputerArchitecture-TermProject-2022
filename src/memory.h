@@ -8,8 +8,8 @@ unsigned int MEM(unsigned int A, int V, int nRW, int S);
 // word size 별로 선택
 // nRW 에 따라 read memory / write memory
 
-// m instruction -> 실행
-// '<start> <end>' 입력-> print memory
+// 'm' instruction 입력하면 실행
+// '<start> <end>' 입력하면 print memory
 // start address ~ end address print memory
 void showMemory();
 
