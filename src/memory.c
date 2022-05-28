@@ -74,8 +74,31 @@ unsigned int MEM(unsigned int A, int V, int nRW, int S)
 	return 0;
 }
 
-// 'sm' instruction -> memory address를 value 값으로
-void setMemory()
+// m instruction -> 실행
+// '<start> <end>' 입력-> print memory
+// start address ~ end address print memory
+void showMemory()
+{
+	unsigned int start = 0;
+	unsigned int end = 0;
+	printf("Enter centain range of memory to show(start end): ");
+	scanf_s("%x %x", &start, &end);
+	while (getchar() != '\n')
+		; //flush input buffer
+	printf("==========[MEMORY]==========\n");
+	//show memory value from start to end(1 byte at a time)
+	for (unsigned int i = start; i <= end; i += 4)
+	{
+		printf("MEM[0x%0x] -> %x\n", i, MEM(i, 0, 0, 2));
+	}
+	printf("============================\n");
+}
+
+// program memory, data memory, stack memory 값 모두 0으로 reset
+void resetMemory(); //필요없으면 빼겠음.
+
+// memory address를 value 값으로
+void setMemory() //필요없으면 빼겠음.
 {
 	unsigned int where;
 	unsigned int value;
@@ -85,17 +108,3 @@ void setMemory()
 		;
 	MEM(where, value, 1, 2);
 }
-
-
-// 'm <start> <end>' -> print memory
-// start address ~ end address print memory
-void showMemory(unsigned char address)
-{
-	printf("==========[MEMORY]==========\n");
-	//show memory value from start to end(1 byte at a time)
-	printf("MEM[0x%0x] -> %x\n", address, MEM(address, 0, 0, 2));
-	printf("============================\n");
-}
-
-// program memory, data memory, stack memory 값 모두 0으로 reset
-void resetMemory(); //필요없으면 빼겠음.
