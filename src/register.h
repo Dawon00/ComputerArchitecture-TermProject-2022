@@ -5,38 +5,6 @@ static char REGISTER[REG_SIZE][6] = {
 
 // Memory Register
 unsigned int REGS[REG_SIZE];
-// PC, HI, LO
-unsigned int PC, HI, LO;
-// Instruction Register
-union IR
-{
-    // 명령어 전체 비트 변수
-    unsigned int I;
-
-    struct RFormat
-    {
-        unsigned int funct : 6;
-        unsigned int sh : 5;
-        unsigned int rd : 5;
-        unsigned int rt : 5;
-        unsigned int rs : 5;
-        unsigned int op : 6;
-    } RF;
-
-    struct IFormat
-    {
-        int operand : 16;
-        unsigned int rt : 5;
-        unsigned int rs : 5;
-        unsigned int op : 6;
-    } IF;
-
-    struct JFormat
-    {
-        unsigned int address : 26;
-        unsigned int op : 6;
-    } JF;
-};
 
 unsigned int REG(unsigned int A, unsigned int V, unsigned int nRW);
 // access register interface(read & write)
@@ -47,7 +15,7 @@ void showRegister();
 void resetRegister();
 // register 값 모두 0으로 reset
 
-void setRegister(unsigned int number, int value);
+void setRegister();
 // 'sr' instruction -> register 값 설정
 
 void jumpRegister(unsigned int address);

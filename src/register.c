@@ -1,4 +1,5 @@
 #include "register.h"
+#include "instruction.h"
 
 // access register interface(read & write)
 unsigned int REG(unsigned int A, unsigned int V, unsigned int nRW)
