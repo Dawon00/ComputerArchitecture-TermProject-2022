@@ -22,10 +22,10 @@ int logicOperation(int X, int Y, int C);
 //V is 5bit shift amount
 int shiftOperation(int V, int Y, int C);
 
-int checkSetLess(int X, int Y);
 // X < Y ?
+int checkSetLess(int X, int Y);
 
-int isZero(int S, int *Z);
 // if S is 0, Z = 1
+int isZero(int S, int *Z);
 
 

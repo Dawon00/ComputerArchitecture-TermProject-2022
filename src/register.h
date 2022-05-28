@@ -6,17 +6,18 @@ static char REGISTER[REG_SIZE][6] = {
 // Memory Register
 unsigned int REGS[REG_SIZE];
 
-unsigned int REG(unsigned int A, unsigned int V, unsigned int nRW);
 // access register interface(read & write)
+unsigned int REG(unsigned int A, unsigned int V, unsigned int nRW);
 
-void showRegister();
 // 'r' instruction -> print register
+void showRegister();
 
-void resetRegister();
 // register 값 모두 0으로 reset
+void resetRegister();
 
-void setRegister();
 // 'sr' instruction -> register 값 설정
+void setRegister();
 
-void jumpRegister(unsigned int address);
 // 'j' instruction -> jump
+void jumpRegister(unsigned int address);
+
