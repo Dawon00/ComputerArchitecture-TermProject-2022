@@ -29,11 +29,16 @@ void showRegister()
 	printf("==============================\n");
 }
 
+void jumpRegister(unsigned int address)
+{
+	PC = address;
+}
+
 // register 값 모두 0으로 reset
 void resetRegister(); //필요 없으면 빼겠음.
 
-// 'sr' instruction -> register 값 설정
-void setRegister()
+// register 값 설정
+void setRegister() //필요 없으면 빼겠음.
 {
 	unsigned int where;
 	unsigned int value;
@@ -42,9 +47,4 @@ void setRegister()
 	while (getchar() != '\n')
 		;
 	REG(where, value, 1);
-}
-
-void jumpRegister(unsigned int address)
-{
-	PC = address;
 }

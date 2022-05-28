@@ -66,4 +66,4 @@ int checkSetLess(int X, int Y){
 }
 
 // if S is 0, Z = 1
-int isZero(int S, int *Z);
+int isZero(int S, int *Z); //필요없으면 빼겠음.
