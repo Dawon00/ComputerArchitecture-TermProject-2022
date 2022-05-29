@@ -8,7 +8,7 @@
 #include "register.h"
 
 #define COMMAND_LIMIT 100
-#define ARGV_SIZE 2
+#define ARGV_SIZE 3
 
 extern int PC;
 
@@ -29,26 +29,27 @@ int main(void)
       loadProgram(argv[1]);
       break;
     case 'j':
-      // 입력 주소로 프로그램 PC 점프
+      jumpProgram(parseInt(argv[1]));
       break;
     case 'g':
-      // instruction.c 에 있는 goProgram() 사용해주세요.
+      goProgram();
       break;
     case 's':
-      // instruction.c 에 있는 step() 사용해주세요.
+      stepProgram();
       break;
     case 'm':
       // 입력 주소의 메모리값 출력
-      // showMemory(unsigned char address);
+      showMemory(parseInt(argv[1]), parseInt(argv[2]));
       break;
     case 'r':
       // 전체 레지스터값 출력
-      // showRegister()
+      showRegister();
+      break;
     case 'h':
       helpCommand();
       break;
     case 'b':
-      // setBreak();
+      setBreak(parseInt(argv[1]));
       break;
     case 'x': // 프로그램 종료
       return 0;
@@ -114,7 +115,8 @@ void loadProgram(char *fileName)
     MEM(access_data, M[i], 1, 0);
   }
   // initialize PC, StackPointer
-  setPC(0x400000);
+  //setPC(0x400000);
+  PC = 0x400000;
   REG(29, 0x80000000, 1);
   fclose(pFile);
 }

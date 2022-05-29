@@ -79,14 +79,8 @@ unsigned int MEM(unsigned int A, int V, int nRW, int S)
 // 'm' instruction 입력하면 실행
 // '<start> <end>' 입력하면 print memory
 // start address ~ end address print memory
-void showMemory()
+void showMemory(unsigned int start, unsigned int end)
 {
-	unsigned int start = 0;
-	unsigned int end = 0;
-	printf("Enter centain range of memory to show(start end): ");
-	scanf("%x %x", &start, &end);
-	while (getchar() != '\n')
-		; //flush input buffer
 	printf("==========[MEMORY]==========\n");
 	//show memory value from start to end(1 byte at a time)
 	for (unsigned int i = start; i <= end; i += 4)

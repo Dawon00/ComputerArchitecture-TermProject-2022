@@ -4,7 +4,7 @@
 
 unsigned int parseInt(char *str)
 {
-  return strtoul(str, NULL, 10);
+  return (unsigned int) strtoul(str, NULL, 10);
 }
 
 unsigned int convertEndian(unsigned int endian)
