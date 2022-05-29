@@ -16,7 +16,5 @@ void showMemory();
 // memory address를 value 값으로
 void setMemory();
 
-
 // program memory, data memory, stack memory 값 모두 0으로 reset
 void resetMemory();
-

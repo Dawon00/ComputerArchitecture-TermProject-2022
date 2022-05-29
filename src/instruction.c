@@ -3,7 +3,6 @@
 
 extern int PC, HI, LO;
 
-
 void step()
 {
   Instruction IR = {

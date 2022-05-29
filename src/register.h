@@ -20,4 +20,3 @@ void setRegister();
 
 // 'j' instruction -> jump
 void jumpRegister(unsigned int address);
-

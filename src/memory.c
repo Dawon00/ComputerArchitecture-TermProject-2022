@@ -37,9 +37,9 @@ unsigned int MEM(unsigned int A, int V, int nRW, int S)
 	}
 
 	else if (S == 1)
-	{               //half word
+	{ //half word
 		if (offset % 2 != 0)
-		{ 						//잘못된 변위로 접근 시 에러문 출력
+		{ //잘못된 변위로 접근 시 에러문 출력
 			printf("[ERROR] wrong access in half word");
 			exit(1);
 		}
@@ -51,9 +51,9 @@ unsigned int MEM(unsigned int A, int V, int nRW, int S)
 	}
 
 	else if (S == 2)
-	{ 							//word
+	{ //word
 		if (offset % 4 != 0)
-		{ 						//잘못된 변위로 접근 시 에러문 출력
+		{ //잘못된 변위로 접근 시 에러문 출력
 			printf("[ERROR] wrong access in word");
 			exit(1);
 		}

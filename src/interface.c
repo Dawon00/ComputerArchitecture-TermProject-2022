@@ -124,28 +124,30 @@ void jumpProgram(unsigned int address)
   jumpRegister(address);
 }
 
-  // instruction에 구현되어 있는 step 함수를 사용하였음
+// instruction에 구현되어 있는 step 함수를 사용하였음
 int stepProgram()
 {
   step();
   return 1; // 프로그램 끝났으면 1 반환, 아니면 0 반환
 }
 
-  // 프로그램 전체 실행. g 명령어 입력 시 실행됨
-void goProgram() {
+// 프로그램 전체 실행. g 명령어 입력 시 실행됨
+void goProgram()
+{
   if (PC == 0 || PC == breakPC)
-	  end = stepProgram();
-	while (PC != 0 && PC != breakPC)
-	{
-	  end = stepProgram();
-	}
-  if (end) return;
+    end = stepProgram();
+  while (PC != 0 && PC != breakPC)
+  {
+    end = stepProgram();
+  }
+  if (end)
+    return;
 }
 
-  // breakpoint 설정. b 명령어 입력 시 실행됨
+// breakpoint 설정. b 명령어 입력 시 실행됨
 void setBreak(unsigned int addressPC)
 {
-	breakPC = addressPC;
+  breakPC = addressPC;
 }
 
 void helpCommand()

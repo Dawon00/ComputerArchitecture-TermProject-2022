@@ -3,34 +3,47 @@
 // add/sub -> addSubtract
 // and/or/xor/nor -> logicOperation
 // slt -> checkSetLess
-unsigned int ALU(int fct, int v1, int v2) {
+unsigned int ALU(int fct, int v1, int v2)
+{
 	unsigned int ret = 0;
-	switch (fct) {
-	case sll: case srl: case sra:
-		ret = shiftOperation(v2, v1, fct);	break;
-	case add: case sub:
-		ret = addSubtract(v1, v2, fct);	break;
-	case and: case or: case xor: case nor:
-		ret = logicOperation(v1, v2, fct);	break;
+	switch (fct)
+	{
+	case sll:
+	case srl:
+	case sra:
+		ret = shiftOperation(v2, v1, fct);
+		break;
+	case add:
+	case sub:
+		ret = addSubtract(v1, v2, fct);
+		break;
+	case and:
+	case or:
+	case xor:
+	case nor:
+		ret = logicOperation(v1, v2, fct);
+		break;
 	case slt:
-		ret = checkSetLess(v1,v2);	break;
+		ret = checkSetLess(v1, v2);
+		break;
 	}
 	return ret;
 }
 
-
-int addSubtract(int X, int Y, int C){
+int addSubtract(int X, int Y, int C)
+{
 	int ret = 0;
-	if (C == add)	//add
+	if (C == add) //add
 		ret = X + Y;
-	else if (C == sub)	//subtract
+	else if (C == sub) //subtract
 		ret = X - Y;
 	else
 		printf("error in addSubtract operation\n");
 	return ret;
 }
 
-int logicOperation(int X, int Y, int C){
+int logicOperation(int X, int Y, int C)
+{
 	int ret = 0;
 	if (C == and)
 		ret = X & Y;
@@ -45,15 +58,15 @@ int logicOperation(int X, int Y, int C){
 	return ret;
 }
 
-
 //V is 5bit shift amount
-int shiftOperation(int V, int Y, int C){
-  	int ret = 0;
-	if (C == sll)	//shift left logical
+int shiftOperation(int V, int Y, int C)
+{
+	int ret = 0;
+	if (C == sll) //shift left logical
 		ret = (unsigned int)Y << V;
-	else if (C == srl)	//shift right logical
+	else if (C == srl) //shift right logical
 		ret = (unsigned int)Y >> V;
-	else if (C == sra)	//shift right arithmetic
+	else if (C == sra) //shift right arithmetic
 		ret = Y >> V;
 	else
 		printf("error in shift operation\n");
@@ -61,7 +74,8 @@ int shiftOperation(int V, int Y, int C){
 }
 
 // X < Y ?
-int checkSetLess(int X, int Y){
+int checkSetLess(int X, int Y)
+{
 	return (X < Y);
 }
 
