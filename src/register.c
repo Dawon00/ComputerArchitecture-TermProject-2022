@@ -48,3 +48,8 @@ void setRegister() //필요 없으면 빼겠음.
 		;
 	REG(where, value, 1);
 }
+
+void setPC(unsigned int pc)
+{
+	PC = pc;
+}

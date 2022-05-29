@@ -20,3 +20,6 @@ void setRegister();
 
 // 'j' instruction -> jump
 void jumpRegister(unsigned int address);
+
+// PC값 설정
+void setPC(unsigned int pc);
