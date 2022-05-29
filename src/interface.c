@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-// #include "interface.h"
+#include "interface.h"
 #include "decode.h"
 #include "instruction.h"
 #include "memory.h"
@@ -9,6 +9,8 @@
 
 #define COMMAND_LIMIT 100
 #define ARGV_SIZE 2
+
+extern int PC;
 
 int main(void)
 {
@@ -24,7 +26,7 @@ int main(void)
     switch (argv[0][0])
     {
     case 'l':
-      // loadProgram(argv[1]);
+      loadProgram(argv[1]);
       break;
     case 'j':
       // 입력 주소로 프로그램 PC 점프
@@ -82,7 +84,7 @@ void loadProgram(char *fileName)
   int num_data = 0; //number of data
   FILE *pFile = NULL;
   unsigned char M[100]; // for store instruction
-  DM = 0x10000000;      // Entry of data memory
+  unsigned int DM = 0x10000000;      // Entry of data memory
   PC = 0x400000;
   //open file
   pFile = fopen(fileName, "rb");

@@ -1,3 +1,6 @@
+unsigned int breakPC; //break point
+int end;              //goProgram
+
 // 입력받은 문자열(명령어) 저장 후 문자열 길이 반환
 int readCommand(char *command);
 

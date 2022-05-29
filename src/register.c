@@ -3,6 +3,14 @@
 #include "register.h"
 #include "instruction.h"
 
+
+int HI; //HI,LO register
+int LO;
+int PC; //PC register
+
+// Memory Register
+unsigned int REGS[REG_SIZE];
+
 // access register interface(read & write)
 unsigned int REG(unsigned int A, unsigned int V, unsigned int nRW)
 {

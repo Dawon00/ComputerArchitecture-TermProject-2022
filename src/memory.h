@@ -1,5 +1,3 @@
-unsigned int DM;
-
 // access memory(read & write)
 unsigned int MEM(unsigned int A, int V, int nRW, int S);
 // pM : memory access pointer

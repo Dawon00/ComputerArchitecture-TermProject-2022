@@ -2,6 +2,11 @@
 #include "instruction.h"
 #include "operator.h"
 #include "register.h"
+#include "memory.h"
+
+extern int PC;
+extern int HI;
+extern int LO;
 
 void step()
 {
