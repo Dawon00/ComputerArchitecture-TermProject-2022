@@ -1,7 +1,6 @@
+#include <stdio.h>
 #include "instruction.h"
 #include "operator.h"
-
-extern int PC, HI, LO;
 
 void step()
 {

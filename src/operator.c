@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "operator.h"
 // sll/srl/sra -> shiftOperation
 // add/sub -> addSubtract

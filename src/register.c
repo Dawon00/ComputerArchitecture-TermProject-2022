@@ -1,3 +1,5 @@
+#include <stdio.h>
+#include <stdlib.h>
 #include "register.h"
 #include "instruction.h"
 
@@ -43,7 +45,7 @@ void setRegister() //필요 없으면 빼겠음.
 	unsigned int where;
 	unsigned int value;
 	printf("Enter register number and value(number value): ");
-	scanf_s("%d %x", &where, &value);
+	scanf("%d %x", &where, &value);
 	while (getchar() != '\n')
 		;
 	REG(where, value, 1);

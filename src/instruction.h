@@ -1,5 +1,3 @@
-#define NULL ((void *)0)
-
 unsigned int HI; //HI,LO register
 unsigned int LO;
 unsigned int PC;      //PC register

@@ -1,3 +1,5 @@
+#include <stdio.h>
+#include <stdlib.h>
 #include "memory.h"
 
 unsigned char progMEM[0x100000];
@@ -82,7 +84,7 @@ void showMemory()
 	unsigned int start = 0;
 	unsigned int end = 0;
 	printf("Enter centain range of memory to show(start end): ");
-	scanf_s("%x %x", &start, &end);
+	scanf("%x %x", &start, &end);
 	while (getchar() != '\n')
 		; //flush input buffer
 	printf("==========[MEMORY]==========\n");
@@ -103,7 +105,7 @@ void setMemory() //필요없으면 빼겠음.
 	unsigned int where;
 	unsigned int value;
 	printf("Enter memory address and value(address value): ");
-	scanf_s("%x %x", &where, &value);
+	scanf("%x %x", &where, &value);
 	while (getchar() != '\n')
 		;
 	MEM(where, value, 1, 2);
