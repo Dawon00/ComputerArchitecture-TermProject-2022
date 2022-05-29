@@ -1,3 +1,6 @@
+#ifndef OPERATOR_H
+#define OPERATOR_H
+
 #define sll 0
 #define srl 2
 #define sra 3
@@ -27,3 +30,5 @@ int checkSetLess(int X, int Y);
 
 // if S is 0, Z = 1
 int isZero(int S, int *Z);
+
+#endif

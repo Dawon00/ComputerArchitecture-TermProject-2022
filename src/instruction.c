@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "instruction.h"
 #include "operator.h"
+#include "register.h"
 
 void step()
 {

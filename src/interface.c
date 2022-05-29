@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-#include "interface.h"
+// #include "interface.h"
 #include "decode.h"
 #include "instruction.h"
 #include "memory.h"

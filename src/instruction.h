@@ -1,6 +1,6 @@
-unsigned int HI; //HI,LO register
-unsigned int LO;
-unsigned int PC;      //PC register
+#ifndef INSTRUCTION_H
+#define INSTRUCTION_H
+
 unsigned int breakPC; //break point
 unsigned int DM;      //Entry of data memory
 int end;              //goProgram
@@ -35,3 +35,5 @@ typedef union IR
 union IR instructionFetch(); //필요없으면 빼겠음.
 
 void step();
+
+#endif
