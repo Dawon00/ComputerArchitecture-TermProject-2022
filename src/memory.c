@@ -12,7 +12,7 @@ unsigned int MEM(unsigned int A, int V, int nRW, int S)
 	unsigned int sel, offset;
 	unsigned char *pM; // pM : memory access pointer
 	sel = A >> 20;		 // sel : 메모리에 접근하기 위해 입력받은 주소 값 A의 상위 12bit 저장
-	offset = A >> 20;
+	offset = A & 0xFFFFF;
 
 	// sel 에 따라 program memory/data memory/stack memory 구분하기
 	if (sel == 0x004)
