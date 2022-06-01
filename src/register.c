@@ -33,10 +33,11 @@ void showRegister()
 	for (int i = 0; i < REG_SIZE; i++)
 	{
 		char *name = REGISTER[i];
-		printf("R%8s = %x\n", name, REGS[i]);
+		printf("%s   %x\n", name, REGS[i]);
 	}
-	printf("PC = 0x%08x\n", PC);
-	printf("HI = %x	 LO = %x\n", HI, LO);
+	printf("PC    %x\n", PC);
+	printf("HI    %x\n", HI);
+	printf("LO    %x\n", LO);
 	printf("==============================\n");
 }
 
