@@ -32,7 +32,8 @@ void showRegister()
 	printf("==========[REGISTER]==========\n");
 	for (int i = 0; i < REG_SIZE; i++)
 	{
-		printf("R%-2d = %x\n", i, REGS[i]);
+		char *name = REGISTER[i];
+		printf("R%8s = %x\n", name, REGS[i]);
 	}
 	printf("PC = 0x%08x\n", PC);
 	printf("HI = %x	 LO = %x\n", HI, LO);
