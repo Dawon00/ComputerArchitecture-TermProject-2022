@@ -90,17 +90,4 @@ void showMemory(unsigned int start, unsigned int end)
 	printf("============================\n");
 }
 
-// program memory, data memory, stack memory 값 모두 0으로 reset
-void resetMemory(); //필요없으면 빼겠음.
 
-// memory address를 value 값으로
-void setMemory() //필요없으면 빼겠음.
-{
-	unsigned int where;
-	unsigned int value;
-	printf("Enter memory address and value(address value): ");
-	scanf("%x %x", &where, &value);
-	while (getchar() != '\n')
-		;
-	MEM(where, value, 1, 2);
-}

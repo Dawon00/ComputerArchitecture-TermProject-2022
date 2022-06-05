@@ -46,20 +46,6 @@ void jumpRegister(unsigned int address)
 	PC = address;
 }
 
-// register 값 모두 0으로 reset
-void resetRegister(); //필요 없으면 빼겠음.
-
-// register 값 설정
-void setRegister() //필요 없으면 빼겠음.
-{
-	unsigned int where;
-	unsigned int value;
-	printf("Enter register number and value(number value): ");
-	scanf("%d %x", &where, &value);
-	while (getchar() != '\n')
-		;
-	REG(where, value, 1);
-}
 
 void setPC(unsigned int pc)
 {

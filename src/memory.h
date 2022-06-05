@@ -11,8 +11,4 @@ unsigned int MEM(unsigned int A, int V, int nRW, int S);
 // start address ~ end address print memory
 void showMemory();
 
-// memory address를 value 값으로
-void setMemory();
 
-// program memory, data memory, stack memory 값 모두 0으로 reset
-void resetMemory();

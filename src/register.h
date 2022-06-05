@@ -14,12 +14,6 @@ unsigned int REG(unsigned int A, unsigned int V, unsigned int nRW);
 // 'r' instruction -> print register
 void showRegister();
 
-// register 값 모두 0으로 reset
-void resetRegister();
-
-// 'sr' instruction -> register 값 설정
-void setRegister();
-
 // 'j' instruction -> jump
 void jumpRegister(unsigned int address);
 
