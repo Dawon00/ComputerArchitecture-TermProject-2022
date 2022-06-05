@@ -215,8 +215,9 @@ void step()
   //print type에 따라 형식을 달리하여 명령어 출력
   if (printType == 's')
   { //shift
+    char *name = REGISTER[IR.RF.rd];
     printf("%3s $%d, $%d, %d\t|\t", instruction, IR.RF.rd, IR.RF.rt, IR.RF.shamt);
-    printf("After instruction: R%-2d = %x\n", IR.RF.rd, REG(IR.RF.rd, 0, 0));
+    printf("After instruction: %s = %x\n", name, REG(IR.RF.rd, 0, 0));
   }
   else if (printType == 'r') //jr
     printf("%3s $%d\n", instruction, IR.RF.rs);
@@ -234,15 +235,16 @@ void step()
   }
   else if (printType == 'a')
   { //arith
+    char *name = REGISTER[IR.RF.rd];
     printf("%3s $%d, $%d, $%d\t|\t", instruction, IR.RF.rd, IR.RF.rs, IR.RF.rt);
-    printf("After instruction: R%-2d = %x\n", IR.RF.rd, REG(IR.RF.rd, 0, 0));
+    printf("After instruction: %s = %x\n", name, REG(IR.RF.rd, 0, 0));
   }
   else if (printType == 'j')
   { //jump
     if (IR.JF.opcode == 3)
     {
       printf("%3s 0x%08x\t|\t", instruction, IR.JF.address << 2);
-      printf("After instruction: R31 = %x\n", REG(31, 0, 0));
+      printf("After instruction: $ra = %x\n", REG(31, 0, 0));
     }
     else
       printf("%3s 0x%08x\n", instruction, IR.JF.address << 2);
@@ -253,13 +255,15 @@ void step()
     printf("%3s $%d, $%d, %d\n", instruction, IR.IF.rs, IR.IF.rt, IR.IF.immediate << 2);
   else if (printType == 'i')
   { //immediate
+    char *name = REGISTER[IR.RF.rt];
     printf("%3s $%d, $%d, %-6d\t|\t", instruction, IR.IF.rt, IR.IF.rs, IR.IF.immediate);
-    printf("After instruction: R%-2d = %x\n", IR.IF.rt, REG(IR.IF.rt, 0, 0));
+    printf("After instruction: %s = %x\n", name, REG(IR.IF.rt, 0, 0));
   }
   else if (printType == 'l')
   { //lui
+    char *name = REGISTER[IR.RF.rt];
     printf("%3s $%d, %-6d\t|\t", instruction, IR.IF.rt, IR.IF.immediate);
-    printf("After instruction: R%-2d = %x\n", IR.IF.rt, REG(IR.IF.rt, 0, 0));
+    printf("After instruction: %s = %x\n", name, REG(IR.IF.rt, 0, 0));
   }
   else if (printType == 'd')
   { //data transfer instruction
@@ -270,7 +274,10 @@ void step()
     else if (IR.IF.opcode == 40)
       printf("After instruction: MEM[0x%0x] = %c\n", ALU(add, base, IR.IF.immediate), (char)(MEM(ALU(add, base, IR.IF.immediate), 0, 0, 0)));
     else
-      printf("After instruction: R%-2d = %x\n", IR.IF.rt, REG(IR.IF.rt, 0, 0));
+    {
+      char *name = REGISTER[IR.RF.rt];
+      printf("After instruction: %s = %x\n", name, REG(IR.IF.rt, 0, 0));
+    }
   }
   IR.I = 0;
   printf("\n");
