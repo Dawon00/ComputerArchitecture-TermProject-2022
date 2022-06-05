@@ -13,10 +13,6 @@
 #define slt 42
 
 unsigned int ALU(int fct, int v1, int v2); //ALU
-// sll/srl/sra -> shiftOperation
-// add/sub -> addSubtract
-// and/or/xor/nor -> logicOperation
-// slt -> checkSetLess
 
 int addSubtract(int X, int Y, int C);
 

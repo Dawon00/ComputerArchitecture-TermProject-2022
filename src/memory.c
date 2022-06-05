@@ -6,7 +6,7 @@ unsigned char progMEM[0x100000];
 unsigned char dataMEM[0x100000];
 unsigned char stackMEM[0x100000];
 
-// access memory(read & write)
+// memory interface -> access memory(read & write)
 unsigned int MEM(unsigned int A, int V, int nRW, int S)
 {
 	unsigned int sel, offset;
@@ -76,9 +76,8 @@ unsigned int MEM(unsigned int A, int V, int nRW, int S)
 	return 0;
 }
 
-// 'm' instruction 입력하면 실행
-// '<start> <end>' 입력하면 print memory
-// start address ~ end address print memory
+// 'm' instruction -> show certain range of memory(start~end)
+// '<start> <end>' 입력
 void showMemory(unsigned int start, unsigned int end)
 {
 	printf("==========[MEMORY]==========\n");

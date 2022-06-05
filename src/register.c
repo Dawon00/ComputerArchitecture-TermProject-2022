@@ -11,7 +11,7 @@ int PC; //PC register
 // Memory Register
 unsigned int REGS[REG_SIZE];
 
-// access register interface(read & write)
+// Register interface -> access register interface(read & write)
 unsigned int REG(unsigned int A, unsigned int V, unsigned int nRW)
 {
 	if (A > REG_SIZE - 1)
@@ -26,7 +26,7 @@ unsigned int REG(unsigned int A, unsigned int V, unsigned int nRW)
 	return 0;
 }
 
-// 'r' instruction -> print register
+// 'r' instruction -> show current register values
 void showRegister()
 {
 	printf("==========[REGISTER]==========\n");
@@ -41,12 +41,13 @@ void showRegister()
 	printf("==============================\n");
 }
 
+// 'j' instruction -> jump
 void jumpRegister(unsigned int address)
 {
 	PC = address;
 }
 
-
+//setPC
 void setPC(unsigned int pc)
 {
 	PC = pc;

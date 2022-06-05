@@ -8,6 +8,7 @@ extern int PC;
 extern int HI;
 extern int LO;
 
+//take one instruction
 void step()
 {
   Instruction IR = {

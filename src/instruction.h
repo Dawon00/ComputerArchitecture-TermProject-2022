@@ -28,9 +28,7 @@ typedef union IR
     unsigned int I;
 } Instruction; //Instruction Register
 
-// 메모리에서 PC가 가리키는 명령어 가져오기
-union IR instructionFetch(); //필요없으면 빼겠음.
-
+//take one instruction
 void step();
 
 #endif
